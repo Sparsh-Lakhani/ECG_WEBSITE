@@ -1,210 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>Find Hospital</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo1-plot-listing.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  </head>
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <!-- Favicons -->
+    <link href="static/assets/img/favicon.png" rel="icon" />
+    <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="static/assets/vendor/owl.carousel/static/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet" />
+</head>
 
 <body>
-
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-
-  <header>
-    <!-- <nav class="d-flex justify-content-around py-2 bg-warning">
-      <div>College Predictor <span>|</span></div>
-      <div class="links">
-        <a href="#home" class="px-3">Home</a>
-        <a href="#" class="px-3">About Us</a>
-        <a href="#contactdiv" class="px-3">Contact Us</a>
-      </div>
-    </nav> -->
-
-    <nav class="nav">
-        <div class="logo">
-            <!-- <img src="../images/heartt.png" alt="" width="60"> -->
-            <a href="index.html" class="linked"> Find Hospital</a>
-
-        </div>
-        <span id="vert">|</span>
-        <ul>
-            <li><a href="http://127.0.0.1:9091/" class="linked">Home</a></li>
-            <li><a href="http://127.0.0.1:9091/#about" class="linked">About</a></li>
-            <!-- <li><a href="#" class="linked">About</a></li>
-            <li><a href="#" class="linked">Doctors</a></li> -->
-             <li><a href="chatbot.html" class="linked">ChatBot</a></li>
-             <li><a href="consult.html" class="linked">Online Consultation</a></li>
-        </ul>
-    </nav>
-</header>
-  <!-- ***** Header Area End ***** -->
-
-  <div class="main-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="top-text header-text">
-            <div class="cont-1">
-            <h6>Top Rated and Trusted Cardiologists</h6>
-            <h2>Find Nearby Hospitals & Cardiologists</h2>
-          
-       
-      <div class="searchCenter">
-        <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
-            <div class="searcharea">
-            <i style= "padding: 27px 10px 0px 0px;"class="fa fa-search"></i>
-            <select name="area" class="form-select" aria-label="Area" id="selectArea" onchange="showUser(this.value)" style="cursor: pointer;">
-              <option selected>Select Area</option>
-              <option value="1">Chembur</option>
-              <option value="2">Thane</option>
-              <option value="3">Dadar</option>
-          </select></div></form></div></div></div></div></div></div></div></div>
-
-          
-          <div id="txtHint"></div>
-
+    <!-- ======= Top Bar ======= -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!--script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places&v=weekly" async></script!-->
+    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <i class="icofont-clock-time"></i> Health for All. All for Health
             </div>
-          </div>
+            <div class="d-flex align-items-center">
+                <i class="icofont-phone"></i> Contact Us Now : ecgreportanalyzer@gmail.com
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+            <a href="index.html" class="logo mr-auto"><img src=" " alt="" /></a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <h1 class="logo mr-auto"><a href="index.html">Medicio</a></h1> -->
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="http://127.0.0.1:9091/">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#doctors">Doctors</a></li>
+                    <li><a href="http://ecganalyzer.epizy.com/html/">Find Hospital</a></li>                                     
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+            <!--a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a-->
+          
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url(static/assets/img/slide/slide-1.jpg)">
+                    <div class="container">
+                        <h2>Welcome!! <span></span></h2>
+                        <p>
+                            Your Heart is Special...
+                            <br />
+                            <br />
+                            And so is our centre of Excellence.
+                        </p>
+                        
+                        <form method=post enctype=multipart/form-data> <input type=file name=image>
+                            <input type=submit class="appointment-btn scrollto" value=Upload value=submit>
+                        </form>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url(static/assets/img/slide/slide-2.jpg)">
+                    <div class="container">
+                        <h2>Scan Your ECG Report Right Away</h2>
+                        <p>
+                            Yes, you heard it right!. All you need to do is scan your ECG
+                            graph , come to know if your Report is Normal or not.
+                        </p>
+                        <a href="#about" class="btn-get-started scrollto">Read More</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(static/assets/img/slide/slide-3.jpg)">
+                    <div class="container">
+                        <h2>ECG Report Analyzer right at home</h2>
+                        <p>
+                            No more thinking about the results of the report. Get it know
+                            right here. In case, if the report is not normal , Do no Worry!.
+                            We will guide you to make an appointment with nearby Doctors.
+                        </p>
+                        <a href="#about" class="btn-get-started scrollto">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <!-- End Hero -->
+    <main id="main">
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="icofont-heart-beat"></i></div>
+                            <h4 class="title"><a href="">Step 1</a></h4>
+                            <p class="description">
+                                Click on the button on the Top Right Corner Named "Scan ECG
+                                Report". Please make sure you scan only the graphical image.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="icofont-drug"></i></div>
+                            <h4 class="title"><a href="">Step 2</a></h4>
+                            <p class="description">Please wait for results to generate.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon"><i class="icofont-thermometer-alt"></i></div>
+                            <h4 class="title"><a href="">Step 3</a></h4>
+                            <p class="description">
+                                We would be happy if your report is normal, your procedure
+                                ends here. But if not , Do not worry. Check doctors from the
+                                doctors section in the Menu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon"><i class="icofont-dna-alt-1"></i></div>
+                            <h4 class="title"><a href="">Step 4</a></h4>
+                            <p class="description">
+                                After Surfing about the doctors, click on the button to make
+                                appointment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Featured Services Section -->
+        <!-- ======= Cta Section ======= -->
+        <section id="cta" class="cta">
+            <div class="container" data-aos="zoom-in">
+                <div class="text-center">
+                    <h3>In an emergency? Need help now?</h3>
+                    <p></p>
+                    <a class="cta-btn scrollto" href="#appointment">Make an Appointment Now! or Contact Us Now at ecgreportanalyzer@gmail.com</a>
+                </div>
+            </div>
+        </section>
+        <!-- End Cta Section -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>About Us</h2>
+                    <p>
+                        We are convinced that 'quality' and 'lowest cost' are not mutually
+                        exclusive when it comes to healthcare delivery. In fact, we are
+                        well on our way to demonstrate that we are not running our
+                        institution as just another number-only business, but are
+                        attractively placed to create an affordable, globally-benchmarked
+                        quality-driven healthcare services model. Hence, being Pocket
+                        Friendly , giving out the best services while you relax at home is
+                        our aim.
+                        <br />
+                        <br />
+                        It is the exciting prospect that stokes our motivation to do
+                        bigger and better for the glory of the country.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <img src="{{url_for('static', filename='assets/img/ECG_Home.jpg')}}" class="img-fluid" alt="" />
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3>
+                            General Summary Of ECG so that you understand more about your
+                            Health Issue.
+                        </h3>
+                        <p class="font-italic">
+                            Electrocardiography is the process of producing an
+                            electrocardiogram (ECG)
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="icofont-check-circled"></i>It is a graph of voltage
+                                versus time of the electrical activity of the heart using
+                                electrodes placed on the skin.
+                            </li>
+                            <li>
+                                <i class="icofont-check-circled"></i> Ten electrodes are
+                                placed on the patient's limbs and on the surface of the chest.
+                            </li>
+                            <li>
+                                <i class="icofont-check-circled"></i>There are three main
+                                components to an ECG: the P wave, which represents the
+                                depolarization of the atria; the QRS complex, which represents
+                                the depolarization of the ventricles; and the T wave, which
+                                represents the repolarization of the ventricles
+                            </li>
+                        </ul>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About Us Section -->
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+            <div class="container" data-aos="fade-up">
+                <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            <i class="icofont-doctor-alt"></i>
+                            <span data-toggle="counter-up">1</span>
+                            <p><strong></strong>Report analysis done right at your home.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            <i class="icofont-patient-bed"></i>
+                            <span data-toggle="counter-up">2</span>
+                            <p><strong></strong> Find talented doctors right here.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            <i class="icofont-laboratory"></i>
+                            <span data-toggle="counter-up">3</span>
+                            <p>
+                                <strong></strong> A single click solution to all your
+                                problems.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                        <div class="count-box">
+                            <i class="icofont-award"></i>
+                            <span data-toggle="counter-up">4</span>
+                            <p>
+                                <strong></strong> Don't bother to step out of your home just
+                                to check your report. We do it for you right here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="appointment" class="appointment section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Make an Appointment</h2>
+                </div>
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter Full Name">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email Address" data-rule="email" data-msg="Please enter a valid email address">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Phone Number" pattern="[789][0-9]{9}" required="required">
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 form-group">
+                            <input type="date" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date">
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <select name="gender" id="gender" class="form-control">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="validate"></div>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <select name="condition" id="condition" class="form-control">
+                                <option value="">Select your past/current condition </option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="High Blood Pressure">High Blood Pressure</option>
+                                <option value="Heart Disease">Heart Disease</option>
+                                <option value="None">None</option>
+                            </select>
+                            <div class="validate"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="5" placeholder="Purpose of appointment"></textarea>
+                        <div class="validate"></div>
+                    </div>
+                    <div class="text-center"><button class="appointment-btn scrollto" type="submit" id="submit">Make an Appointment</button></div>
+                </form>
+            </div>
+            <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+            <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyCQMBuxe1vjsrKf6n_jfa4FZE01SCRWpeo",
+                authDomain: "ecg-report-analyzer.firebaseapp.com",
+                projectId: "ecg-report-analyzer",
+                storageBucket: "ecg-report-analyzer.appspot.com",
+                messagingSenderId: "14659896453",
+                appId: "1:14659896453:web:fd3a140f62dec3eb2d55ec",
+                measurementId: "G-ZMJM9HYFT6"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var firestore = firebase.firestore()
+            //Var to access database collection
+            const db = firestore.collection("fomData")
+            //Get submit form
+            let submitButton = document.getElementById('submit')
+            //create event listener to allow form submision
+            submitButton.addEventListener("click", (e) => {
+                //prevent default form submission behaviour
+                e.preventDefault()
+                //get form values
+                let name = document.getElementById('name').value
+                let email = document.getElementById('email').value
+                let phone = document.getElementById('phone').value
+                let date = document.getElementById('date').value
+                let gender = document.getElementById('gender').value
+                let condition = document.getElementById('condition').value
 
-
+                //save form data to firebase
+                db.doc().set({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    date: date,
+                    gender: gender,
+                    condition: condition
+                }).then(() => {
+                    console.log("Data saved")
+                })
+                //alert
+                alert("Your Form has been submitted successfully")
+            })
+            </script>
+        </section><!-- End Appointment Section -->
+        <section id="doctors" class="doctors section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Find Hospital</h2>
+                    <p>
+                        These Hospitals comprises leading specialists who are highly skilled
+                        and experienced in their respective arena of all health related
+                        problems.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="static/assets/img/Hospital_1.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Zen Multi Speciality Hospital</h4>
+                                <span> Chembur Gaothan, Chembur, Mumbai, Maharashtra 400071
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-img">
+                                <img src="static/assets/img/Hospital_2.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Surana Sethia Hospital</h4>
+                                <span>
+                                    Sion - Trombay Rd, Suman Nagar, Chembur, Mumbai, Maharashtra 400071</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member-img">
+                                <img src="static/assets/img/Hospital_3.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Mumbai Heart Clinic</h4>
+                                <span>Chembur West, Pestom Sagar Colony, Chembur, Mumbai, Maharashtra 400089</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="400">
+                            <div class="member-img">
+                                <img src="static/assets/img/Hospital_5.jpg" class="img-fluid" alt="" />
+                                <div class="social">
+                                    <a href=""><i class="icofont-twitter"></i></a>
+                                    <a href=""><i class="icofont-facebook"></i></a>
+                                    <a href=""><i class="icofont-instagram"></i></a>
+                                    <a href=""><i class="icofont-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Joy Hospital</h4>
+                                <span> Chembur Gaothan, Chembur, Mumbai, Maharashtra 400071</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Doctors Section -->
         <!-- ======= Footer ======= -->
         <footer id="footer">
-          <div class="footer-top">
-              <div class="container">
-                  <div class="row">
-                      <div class="col-lg-3 col-md-6">
-                          <div class="footer-info">
-                              <h3>ECG Report Analyzer</h3>
-                              <p>
-                                  Mahavir Education Trust Chowk, W.T Patil Marg, Chembur, next to Duke's Company, <br />
-                                  Mumbai, Maharashtra 400088<br /><br />
-                                  <strong>Contact Us : </strong>ecgreportanalyzer@gmail.com<br />
-                              </p>
-                              <div class="social-links mt-3">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-2 col-md-6 footer-links">
-                          <h4>Classifies your report<br> into following categories.</h4>
-                          <ul>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i> <a href="#">Normal</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i> <a href="#">Artifacts</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i> <a href="#">St Elevation</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i>
-                                  <a href="#">St Depression</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i>
-                                  <a href="#">Steep St Elevation</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <div class="col-lg-3 col-md-6 footer-links">
-                         <h4>Find a Hospital - <br><br>
-                          Steps to be followed</h4>
-                          <ul>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i> <a href="#">Select Your Nearby Area</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i>
-                                  <a href="#">Click For Search Button</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i>
-                                  <a href="#">Choose a Cardiologist</a>
-                              </li>
-                              <li>
-                                  <i class="bx bx-chevron-right"></i>
-                                  <a href="#">Locate on Google Maps</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <div class="col-lg-4 col-md-6 footer-newsletter">
-                          <h4>Emergency?</h4>
-                          <p>
-                              Call Us <br> Or make an appointment
-                          </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </footer>
-      <!-- End Footer -->
-<div id="table"></div>
-  <!-- Scripts -->
-
-    
-  <script>
-    $('select#selectArea').on('change', function() {
-      var val = $(this).val();
-      $("html, body").animate({ scrollTop: $('#txtHint').offset().top }, 0)
-    });
-    function showUser(str) {
-      if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-      } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("txtHint").innerHTML = this.responseText;
-          }
-        };
-        xmlhttp.open("GET", "getuser.php?q=" + str, true);
-        xmlhttp.send();
-      }
-    }
-  </script>
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/card.js"></script>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-info">
+                                <h3>ECG Report Analyzer</h3>
+                                <p>
+                                    Mahavir Education Trust Chowk, W.T Patil Marg, Chembur, next to Duke's Company, <br />
+                                    Mumbai, Maharashtra 400088<br /><br />
+                                    <strong>Contact Us : </strong>ecgreportanalyzer@gmail.com<br />
+                                </p>
+                                <div class="social-links mt-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 footer-links">
+                            <h4>Classifies your report<br> into following categories.</h4>
+                            <ul>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i> <a href="#">Normal</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i> <a href="#">Artifacts</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i> <a href="#">St Elevation</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i>
+                                    <a href="#">St Depression</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i>
+                                    <a href="#">Steep St Elevation</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Steps to be followed</h4>
+                            <ul>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i> <a href="#">Click on "Scan ECG Report" Button</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i>
+                                    <a href="#">Wait for the results</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i>
+                                    <a href="#">Download Your Result</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-chevron-right"></i>
+                                    <a href="#">Make an appointment</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Emergency?</h4>
+                            <p>
+                                Call Us <br> Or make an appointment
+                            </p>
+                            <!--<form action="" method="post">
+                <input type="email" name="email" /><input
+                  type="submit"
+                  value="Subscribe"
+                />
+              </form>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        <!-- Vendor JS Files -->
+        <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+        <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+        <script src="static/assets/vendor/php-email-form/validate.js"></script>
+        <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+        <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+        <script src="static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+        <script src="static/assets/vendor/aos/aos.js"></script>
+        <!-- Template Main JS File -->
+        <script src="static/assets/js/main.js"></script>
 </body>
 
 </html>
