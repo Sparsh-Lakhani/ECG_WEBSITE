@@ -1,0 +1,7 @@
+numpy==1.21.4
+tensorflow
+Flask
+opencv-python
+image-slicer
+pandas
+pylsd-nova
