@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Find Hospital</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo1-plot-listing.css">
+    <link rel="stylesheet" href="assets/css/animated.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+<body>
+
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+
+  <header>
+    <!-- <nav class="d-flex justify-content-around py-2 bg-warning">
+      <div>College Predictor <span>|</span></div>
+      <div class="links">
+        <a href="#home" class="px-3">Home</a>
+        <a href="#" class="px-3">About Us</a>
+        <a href="#contactdiv" class="px-3">Contact Us</a>
+      </div>
+    </nav> -->
+
+    <nav class="nav">
+        <div class="logo">
+            <!-- <img src="../images/heartt.png" alt="" width="60"> -->
+            <a href="index.html" class="linked"> Find Hospital</a>
+
+        </div>
+        <span id="vert">|</span>
+        <ul>
+            <li><a href="http://127.0.0.1:9091/" class="linked">Home</a></li>
+            <li><a href="http://127.0.0.1:9091/#about" class="linked">About</a></li>
+            <!-- <li><a href="#" class="linked">About</a></li>
+            <li><a href="#" class="linked">Doctors</a></li> -->
+             <li><a href="chatbot.html" class="linked">ChatBot</a></li>
+             <li><a href="consult.html" class="linked">Online Consultation</a></li>
+        </ul>
+    </nav>
+</header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="top-text header-text">
+            <div class="cont-1">
+            <h6>Top Rated and Trusted Cardiologists</h6>
+            <h2>Find Nearby Hospitals & Cardiologists</h2>
+          
+       
+      <div class="searchCenter">
+        <div class="col-lg-12">
+          <form id="search-form" name="gs" method="submit" role="search" action="#">
+            <div class="searcharea">
+            <i style= "padding: 27px 10px 0px 0px;"class="fa fa-search"></i>
+            <select name="area" class="form-select" aria-label="Area" id="selectArea" onchange="showUser(this.value)" style="cursor: pointer;">
+              <option selected>Select Area</option>
+              <option value="1">Chembur</option>
+              <option value="2">Thane</option>
+              <option value="3">Dadar</option>
+          </select></div></form></div></div></div></div></div></div></div></div>
+
+          
+          <div id="txtHint"></div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+          <div class="footer-top">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-3 col-md-6">
+                          <div class="footer-info">
+                              <h3>ECG Report Analyzer</h3>
+                              <p>
+                                  Mahavir Education Trust Chowk, W.T Patil Marg, Chembur, next to Duke's Company, <br />
+                                  Mumbai, Maharashtra 400088<br /><br />
+                                  <strong>Contact Us : </strong>ecgreportanalyzer@gmail.com<br />
+                              </p>
+                              <div class="social-links mt-3">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-2 col-md-6 footer-links">
+                          <h4>Classifies your report<br> into following categories.</h4>
+                          <ul>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i> <a href="#">Normal</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i> <a href="#">Artifacts</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i> <a href="#">St Elevation</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i>
+                                  <a href="#">St Depression</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i>
+                                  <a href="#">Steep St Elevation</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="col-lg-3 col-md-6 footer-links">
+                         <h4>Find a Hospital - <br><br>
+                          Steps to be followed</h4>
+                          <ul>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i> <a href="#">Select Your Nearby Area</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i>
+                                  <a href="#">Click For Search Button</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i>
+                                  <a href="#">Choose a Cardiologist</a>
+                              </li>
+                              <li>
+                                  <i class="bx bx-chevron-right"></i>
+                                  <a href="#">Locate on Google Maps</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="col-lg-4 col-md-6 footer-newsletter">
+                          <h4>Emergency?</h4>
+                          <p>
+                              Call Us <br> Or make an appointment
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- End Footer -->
+<div id="table"></div>
+  <!-- Scripts -->
+
+    
+  <script>
+    $('select#selectArea').on('change', function() {
+      var val = $(this).val();
+      $("html, body").animate({ scrollTop: $('#txtHint').offset().top }, 0)
+    });
+    function showUser(str) {
+      if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+      } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xmlhttp.open("GET", "getuser.php?q=" + str, true);
+        xmlhttp.send();
+      }
+    }
+  </script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/card.js"></script>
+</body>
+
+</html>

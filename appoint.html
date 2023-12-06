@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Confirm Appointment</title>
+	<link rel="stylesheet" href="appoint.css">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Work+Sans&display=swap"
+		rel="stylesheet">
+		<script src="./assets/js/timeslot.js"></script>
+	</head>
+
+<body>
+	
+<!-- <form action="http://localhost/index.php" method="POST"> -->
+	
+	<section class="section-book">
+		<div class="book">
+			<div class="booking">
+				<div class="book-form">
+					<form method="POST" action="appoint.php" class="form">
+						<h2 class="heading">Appointment Form</h2>
+
+						<div class="form-group">
+							<input type="text" class="form-input" placeholder="Full name" id="name" name="fullname"required>
+							<label for="name" class="form-label">Full name</label>
+						</div>
+                        
+						<div class="form-group">
+							<input type="text" class="form-input" placeholder="Phone Number" id="phonenumber"
+								name="phonenumber">
+							<label for="phonenumber" class="form-label">Phone Number</label>
+						</div>
+						<div class="form-group">
+							<input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-input"
+								placeholder="Email Address" id="email" name="email">
+							<label for="email" class="form-label">Email Address</label>
+						</div>
+						<div class="form-group">
+							<!-- <input type="text" class="form-input" placeholder="Doctor's name" id="name" name="doctorsname"
+								required> -->
+							<!-- <label for="name" class="form-label">Doctor's name</label> -->
+						<select class="option" name="doctorsname" onchange="showUser(this.value)">
+								<option disabled="disabled" selected="selected" value="0" id="dis">Doctor's Name</option>
+								<optgroup label="Chembur">
+									<option value="1">Dr Amit Patil</option>
+									<option value="2">Dr Brijesh Agrawal</option>
+									<option value="3">Dr C B Munjewar</option>
+									<option value="4">Dr Avinash Phadke</option>
+									<option value="5">Dr Anil Potdar</option>
+									<option value="6">Dr Dinesh Rajpal</option>
+								</optgroup>
+								<optgroup label="Thane">
+									<option value="7">Dr Mayur Jain</option>
+									<option value="8">Dr Ameya Amonkar</option>
+									<option value="9">Dr Bhaskar Shah</option>
+									<option value="10">Dr Aniruddha Pawar</option>
+									<option value="11">Dr B. C. Kalmath</option>
+								</optgroup>
+								<optgroup label="Dadar">
+									<option value="12">Dr Kunal Praful Sinkar</option>
+									<option value="13">Dr Rajiv Bhagwat</option>
+									<option value="14">Dr Ashok Punjabi</option>
+									<option value="15">Dr Ankur Phatarpekar</option>
+									<option value="16">Dr Prakash Sanzgiri</option>
+								</optgroup>
+							</select>
+						</div><br>
+						<div id="txthint"></div>
+						<div class="form-group">
+							<input type="text" class="form-input" placeholder="Available Time slots" 
+								name="timeslots" id="AppointmentTimeslots" style="background-color: #fff;">
+							<label for="timeslots" class="form-label">Selected Time slot</label>
+						</div>
+						<div class="form-group">
+							<label for="doa" class="form-label-1">Date of Appointment</label>
+							<input type="date" size="30" class="form-input"  id="doa"
+								name="doa">
+							
+						</div>
+						
+						<p></p>
+						<hr>
+						<br>
+						<div class="select">
+							<h2>Gender</h2>
+							<div class="radiobtn">
+								<div class="form-radio-group">
+									<input type="radio" class="form-radio-input" id="small" name="gender"
+										value="male">
+									<label for="small" class="form-radio-label">
+										<span class="form-radio-button"></span>
+										Male
+									</label>
+								</div>
+								<div class="form-radio-group">
+									<input type="radio" class="form-radio-input" id="small1" name="gender"
+										value="female">
+									<label for="small1" class="form-radio-label">
+										<span class="form-radio-button"></span>
+										Female
+									</label>
+								</div>
+								<div class="form-radio-group">
+									<input type="radio" class="form-radio-input" id="small2" name="gender"
+										value="other">
+									<label for="small2" class="form-radio-label">
+										<span class="form-radio-button"></span>
+										Other
+									</label>
+								</div>
+							</div>
+							
+		
+						<br><br>
+						<hr>
+						<div>
+						</div>
+						<p></p>
+
+						<p></p>
+					
+						<br>
+						<div class="select-1">
+							<h2>Age</h2>
+							<input type="text" class="form-input-1" placeholder="Age" id="age"
+								name="age">
+						</div>
+						<div class="select-2">
+							<h2>Date Of Birth</h2>
+							<input type="date" size="30" class="form-input-2"  id="dob"
+								name="dob">
+						</div>
+		
+						<br><br>
+						<hr>
+						<div>
+						</div>
+						<p></p>
+						<div class="form-group">
+							<a href="appoint.php">
+								<input type="submit" name="submit" value="CONFIRM APPOINTMENT &rarr;" class="btn">
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+	</section>
+<!-- </form> -->
+	<!-- </div> -->
+	
+
+	<script>
+  function showUser(str) {
+	if (str == "") {
+	  document.getElementById("txthint").innerHTML = "";
+	  return;
+	} else {
+	  var xmlhttp = new XMLHttpRequest();
+	  xmlhttp.onreadystatechange = function () {
+		if (this.readyState == 4 && this.status == 200) {
+		  document.getElementById("txthint").innerHTML = this.responseText;
+		}
+	  };
+	  xmlhttp.open("GET", "timeslot.php?q=" + str, true);
+	  xmlhttp.send();
+	}
+  }
+	</script>
+</body>
+
+</html>
